@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
@@ -21,27 +22,9 @@ namespace WPFUI.ViewModels
 
         public void SelectFiles()
         {
-            //_blockText = "Jotain muuta";
-            //Items.Add(_blockText);
-            //NotifyOfPropertyChange(() => Block);
 
-
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.Multiselect = true;
-            dlg.DefaultExt = ".rtf";
-            dlg.Filter = "TXT Files(*.txt)|*.txt|RTF files(*.rtf)|*.rtf";
-
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if(result== true)
-            {
-                foreach(String file in dlg.FileNames)
-                {
-                Items.Add(dlg.FileName);
-
-                }
-
-            }
+            Items = AccessFiles.AccessListOfFiles();
+            NotifyOfPropertyChange(() => Items);
 
         }
 
