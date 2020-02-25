@@ -9,12 +9,12 @@ namespace WPFUI.Models
 {
     public class AccessFiles
     {
-
-        public static BindableCollection<string> AccessListOfFiles()
+        //Opens a dialog and returns list of file's paths.
+        public static BindableCollection<string> AccessListOfFilePaths()
         {
             BindableCollection<string> output = new BindableCollection<string>();
 
-            Microsoft.Win32.OpenFileDialog dlg = InitializeFileDialog.Initialize("RTF files(*.rtf)|*.rtf|TXT Files(*.txt)|*.txt");
+            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog("RTF files(*.rtf)|*.rtf|TXT Files(*.txt)|*.txt");
 
             Nullable<bool> result = dlg.ShowDialog();
 
@@ -22,8 +22,8 @@ namespace WPFUI.Models
             {
                 foreach (String file in dlg.FileNames)
                 {
-                    output.Add(dlg.FileName);
-
+                    output.Add(file);
+                    
                 }
 
             }

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace WPFUI.Models
 {
-    public class InitializeFileDialog
+    public class Initialize
     {
-        public static Microsoft.Win32.OpenFileDialog Initialize(string filter)
+        //Initializes File dialogs and return it.
+        public static Microsoft.Win32.OpenFileDialog InitializeOpenFileDialog(string filter)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.Multiselect = true;

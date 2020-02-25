@@ -34,10 +34,10 @@
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
             <Button x:Name="SelectFiles">Select Filest</Button>
-            <ItemsControl x:Name="Items">
+            <ItemsControl x:Name="FilePaths">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel/>
+                        <StackPanel/>
                     </ItemsPanelTemplate>            
                 </ItemsControl.ItemsPanel>
             </ItemsControl>

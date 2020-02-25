@@ -12,20 +12,20 @@ namespace WPFUI.ViewModels
     public class ShellViewModel : Conductor<object>
     {
         private string _blockText = "jotain";
-        public BindableCollection<string> Items { get; set; }
+        public BindableCollection<string> FilePaths { get; set; }
 
         public ShellViewModel()
         {
-            Items = new BindableCollection<string>();
+            FilePaths = new BindableCollection<string>();
 
         }
 
         public void SelectFiles()
         {
 
-            Items = AccessFiles.AccessListOfFiles();
-            NotifyOfPropertyChange(() => Items);
-
+            FilePaths = AccessFiles.AccessListOfFilePaths();
+            NotifyOfPropertyChange(() => FilePaths);
+            
         }
 
         public string Block
