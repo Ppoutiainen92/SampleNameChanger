@@ -26,7 +26,7 @@ namespace WPFUI.ViewModels
 
             FilePaths = AccessFiles.AccessListOfFilePaths();
             NotifyOfPropertyChange(() => FilePaths);
-            listOfSelectedFiles = AccessFiles.ListOfFiles(FilePaths);
+            listOfSelectedFiles = AccessFiles.ListOfFileInfo(FilePaths);
             
         }
 

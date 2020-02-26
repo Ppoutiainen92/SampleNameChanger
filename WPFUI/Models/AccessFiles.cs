@@ -32,11 +32,17 @@ namespace WPFUI.Models
 
         }
 
-        public static List<FileInfo> ListOfFiles(BindableCollection <string>ListOfFilePaths)
+        public static List<FileInfo> ListOfFileInfo(BindableCollection <string>ListOfFilePaths)
         {
             var output = new List<FileInfo>();
 
+            foreach (string item in ListOfFilePaths)
+            {
+                FileInfo fileInfo = new FileInfo(item);
 
+                output.Add(fileInfo);
+
+            }
 
 
 
