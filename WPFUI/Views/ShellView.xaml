@@ -34,13 +34,7 @@
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
             <Button x:Name="SelectFiles">Select Files</Button>
-            <!--<ItemsControl x:Name="FilePaths">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel/>
-                    </ItemsPanelTemplate>            
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>-->
+
             
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0">
@@ -61,7 +55,14 @@
             <TextBox x:Name="RoundRobinValue"></TextBox>
             <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
         </StackPanel>
-        
+
+        <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Margin="100,0,0,0">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>            
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
 
 
 
