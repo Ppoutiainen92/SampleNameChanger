@@ -14,6 +14,7 @@ namespace WPFUI.ViewModels
         private string _blockText = "jotain";
         public BindableCollection<string> FilePaths { get; set; }
         List<FileInfo> listOfSelectedFiles;
+        int _roundRobinValue = 0;
 
         public ShellViewModel()
         {
@@ -30,11 +31,22 @@ namespace WPFUI.ViewModels
             
         }
 
+        public int RoundRobinValue
+        {
+            get { return _roundRobinValue; }
+
+            set {
+                _roundRobinValue = value;
+                NotifyOfPropertyChange(() => RoundRobinValue);
+            }
+            
+        }
+
         public string Block
         {
             get { return _blockText; }
 
-
+     
 
         }
     }

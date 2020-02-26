@@ -33,7 +33,7 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
-            <Button x:Name="SelectFiles">Select Filest</Button>
+            <Button x:Name="SelectFiles">Select Files</Button>
             <ItemsControl x:Name="FilePaths">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -43,6 +43,13 @@
             </ItemsControl>
             
         </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="4" Margin="100,0,0,0">
+            <TextBlock>RoundRobins</TextBlock>
+            <TextBox x:Name="RoundRobinValue"></TextBox>
+            <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
+        </StackPanel>
+        
         
         
     </Grid>
