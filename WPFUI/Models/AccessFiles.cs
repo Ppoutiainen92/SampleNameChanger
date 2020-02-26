@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WPFUI.Models
 {
@@ -29,6 +30,17 @@ namespace WPFUI.Models
             }
             return output;
 
+        }
+
+        public static List<FileInfo> ListOfFiles(BindableCollection <string>ListOfFilePaths)
+        {
+            var output = new List<FileInfo>();
+
+
+
+
+
+            return output;
         }
         
 

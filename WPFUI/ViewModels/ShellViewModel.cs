@@ -13,18 +13,20 @@ namespace WPFUI.ViewModels
     {
         private string _blockText = "jotain";
         public BindableCollection<string> FilePaths { get; set; }
+        List<FileInfo> listOfSelectedFiles;
 
         public ShellViewModel()
         {
             FilePaths = new BindableCollection<string>();
 
         }
-
+        
         public void SelectFiles()
         {
 
             FilePaths = AccessFiles.AccessListOfFilePaths();
             NotifyOfPropertyChange(() => FilePaths);
+            listOfSelectedFiles = AccessFiles.ListOfFiles(FilePaths);
             
         }
 
