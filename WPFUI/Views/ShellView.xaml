@@ -34,13 +34,25 @@
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
             <Button x:Name="SelectFiles">Select Files</Button>
-            <ItemsControl x:Name="FilePaths">
+            <!--<ItemsControl x:Name="FilePaths">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>            
                 </ItemsControl.ItemsPanel>
-            </ItemsControl>
+            </ItemsControl>-->
+            
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0">
+            <TextBlock>Dynamics</TextBlock>
+            <CheckBox x:Name="CheckBoxppp" FontSize="10" FontStyle="Italic">ppp</CheckBox>
+            <CheckBox x:Name="CheckBoxpp" FontSize="10" FontStyle="Italic">pp</CheckBox>
+            <CheckBox x:Name="CheckBoxp" FontSize="10" FontStyle="Italic">p</CheckBox>
+            <CheckBox x:Name="CheckBoxmp" FontSize="10" FontStyle="Italic">mp</CheckBox>
+            <CheckBox x:Name="CheckBoxmf" FontSize="10" FontStyle="Italic">mf</CheckBox>
+            <CheckBox x:Name="CheckBoxf" FontSize="10" FontStyle="Italic">f</CheckBox>
+            <CheckBox x:Name="CheckBoxff" FontSize="10" FontStyle="Italic">ff</CheckBox>
+            <CheckBox x:Name="CheckBoxfff" FontSize="10" FontStyle="Italic">fff</CheckBox>
             
         </StackPanel>
 
@@ -50,7 +62,9 @@
             <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
         </StackPanel>
         
-        
-        
+
+
+
+
     </Grid>
 </Window>
