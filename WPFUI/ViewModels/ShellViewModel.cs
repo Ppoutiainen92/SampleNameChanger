@@ -13,6 +13,13 @@ namespace WPFUI.ViewModels
     {
         private string _blockText = "jotain";
         private bool _checkBoxppp;
+        private bool _checkBoxpp;
+        private bool _checkBoxp;
+        private bool _checkBoxmp;
+        private bool _checkBoxmf;
+        private bool _checkBoxf;
+        private bool _checkBoxff;
+        private bool _checkBoxfff;
         public Dictionary<string ,bool> dynamicsCheckBoxStates;
 
         public BindableCollection<string> FilePaths { get; set; }
@@ -60,9 +67,97 @@ namespace WPFUI.ViewModels
         {
             get { return _checkBoxppp; }
             set {
+                string checkBoxName = "CheckBoxppp";
                 _checkBoxppp = value;
-                changeDynamicDictValue("CheckBoxppp", _checkBoxppp);
-                CheckBoxStates.Add($"CheckBoxppp is {dynamicsCheckBoxStates["CheckBoxppp"].ToString()}");
+                
+                changeDynamicDictValue(checkBoxName, _checkBoxppp);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxpp
+        {
+            get { return _checkBoxpp; }
+            set
+            {
+                string checkBoxName = "CheckBoxpp";
+                _checkBoxpp = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxpp);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxp
+        {
+            get { return _checkBoxp; }
+            set
+            {
+                string checkBoxName = "CheckBoxp";
+                _checkBoxp = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxp);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxmp
+        {
+            get { return _checkBoxmp; }
+            set
+            {
+                string checkBoxName = "CheckBoxmp";
+                _checkBoxmp = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxmp);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxmf
+        {
+            get { return _checkBoxmf; }
+            set
+            {
+                string checkBoxName = "CheckBoxmf";
+                _checkBoxmf = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxmf);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxf
+        {
+            get { return _checkBoxf; }
+            set
+            {
+                string checkBoxName = "CheckBoxf";
+                _checkBoxf = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxf);
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxff
+        {
+            get { return _checkBoxff; }
+            set
+            {
+                string checkBoxName = "CheckBoxff";
+                _checkBoxff = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxff);
+
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
+            }
+        }
+        public bool CheckBoxfff
+        {
+            get { return _checkBoxfff; }
+            set
+            {
+                string checkBoxName = "CheckBoxfff";
+                _checkBoxfff = value;
+
+                changeDynamicDictValue(checkBoxName, _checkBoxfff);
+
+                CheckBoxStates.Add($"{checkBoxName} is {dynamicsCheckBoxStates[checkBoxName].ToString()}");
             }
         }
 

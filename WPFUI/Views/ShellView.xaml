@@ -56,7 +56,7 @@
             <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
         </StackPanel>
 
-        <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Margin="100,0,0,0">
+        <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Margin="100,0,0,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
