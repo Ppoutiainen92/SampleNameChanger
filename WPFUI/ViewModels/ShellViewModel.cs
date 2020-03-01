@@ -13,6 +13,7 @@ namespace WPFUI.ViewModels
     {
         private string _blockText = "jotain";
         private bool _checkBoxppp;
+        public Dictionary<string ,bool> dynamicsCheckBoxStates;
 
         public BindableCollection<string> FilePaths { get; set; }
         public BindableCollection<string> CheckBoxStates { get; set; }
@@ -23,6 +24,7 @@ namespace WPFUI.ViewModels
         {
             FilePaths = new BindableCollection<string>();
             CheckBoxStates = new BindableCollection<string>();
+            dynamicsCheckBoxStates = Initialize.DynamicsCheckBoxDictionary();
         }
         
         public void SelectFiles()
@@ -59,23 +61,15 @@ namespace WPFUI.ViewModels
             get { return _checkBoxppp; }
             set {
                 _checkBoxppp = value;
-                if (_checkBoxppp)
-                {
-
-                    CheckBoxStates.Add($"CheckBoxppp is {_checkBoxppp}");
-                    NotifyOfPropertyChange(() => CheckBoxStates);
-                }
-                else
-                {
-                    if(CheckBoxStates.Contains("CheckBoxppp is True"))
-                    {
-                        CheckBoxStates.Remove("CheckBoxppp is True");
-                        NotifyOfPropertyChange(() => CheckBoxStates);
-                    }
-
-                }
-                
+                changeDynamicDictValue("CheckBoxppp", _checkBoxppp);
+                CheckBoxStates.Add($"CheckBoxppp is {dynamicsCheckBoxStates["CheckBoxppp"].ToString()}");
             }
+        }
+
+        public void changeDynamicDictValue(string key, bool val)
+        {
+            dynamicsCheckBoxStates[key] = val;
+
         }
 
     }
