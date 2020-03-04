@@ -25,8 +25,8 @@ namespace WPFUI.ViewModels
         private List<FileInfo> listOfSelectedFiles;
         private int _roundRobinValue = 0;
         private BindableCollection<Note> _Notes;
+        private string _noteName;
         
-
 
         public Dictionary<string ,bool> dynamicsCheckBoxStates;
         public BindableCollection<string> FilePaths { get; set; }
@@ -187,6 +187,16 @@ namespace WPFUI.ViewModels
         public BindableCollection<Note> EndingNotes
         {
             get { return _Notes; }
+        }
+
+        public string NoteName {
+            get { return _noteName; }
+            set
+            {
+                _noteName = value;
+                NotifyOfPropertyChange(() => NoteName);
+            }
+
         }
     }
 }

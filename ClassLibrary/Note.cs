@@ -8,13 +8,12 @@ namespace ClassLibrary
 {
     public class Note
     {
-        public string noteName;
-        public int octave;
+        public string NoteName { get; set; }
+        public int Octave { get; set; }
 
-        public Note(string NoteName, int Octave)
+        public Note()
         {
-            noteName = NoteName;
-            octave = Octave;
+
 
         }
         public int noteIndex()
@@ -26,7 +25,7 @@ namespace ClassLibrary
 
         public override string ToString()
         {
-            return noteName +", Oct:" +octave;
+            return NoteName + Octave;
         }
 
     }

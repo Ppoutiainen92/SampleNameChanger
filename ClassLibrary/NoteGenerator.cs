@@ -11,22 +11,23 @@ namespace ClassLibrary
         public static List<Note> createListOfNotes()
         {
             List<Note> listOfNotes = new List<Note>();
-            Note note = new Note("C", 1);
+            
 
             for (int i = 0; i < 9; i++)
             {
-                listOfNotes.Add(new Note("C", i));
-                listOfNotes.Add(new Note("C#", i));
-                listOfNotes.Add(new Note("D", i));
-                listOfNotes.Add(new Note("D#", i));
-                listOfNotes.Add(new Note("E", i));
-                listOfNotes.Add(new Note("F", i));
-                listOfNotes.Add(new Note("F#", i));
-                listOfNotes.Add(new Note("G", i));
-                listOfNotes.Add(new Note("G#", i));
-                listOfNotes.Add(new Note("A", i));
-                listOfNotes.Add(new Note("A#", i));
-                listOfNotes.Add(new Note("B", i));
+                listOfNotes.Add(new Note {NoteName = "C", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "C#", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "D", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "D#", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "E", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "F", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "F#", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "G", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "G#", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "A", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "A#", Octave = i });
+                listOfNotes.Add(new Note { NoteName = "B", Octave = i });
+
             }
                                  
             return listOfNotes;
