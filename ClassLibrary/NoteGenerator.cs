@@ -15,18 +15,18 @@ namespace ClassLibrary
 
             for (int i = 0; i < 9; i++)
             {
-                listOfNotes.Add(new Note {NoteName = "C", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "C#", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "D", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "D#", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "E", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "F", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "F#", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "G", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "G#", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "A", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "A#", Octave = i });
-                listOfNotes.Add(new Note { NoteName = "B", Octave = i });
+                listOfNotes.Add(new Note {NoteName = "C", Octave = i , FullName = $"C{i}"});
+                listOfNotes.Add(new Note { NoteName = "C#", Octave = i, FullName = $"C#{i}" });
+                listOfNotes.Add(new Note { NoteName = "D", Octave = i, FullName = $"D{i}" });
+                listOfNotes.Add(new Note { NoteName = "D#", Octave = i, FullName = $"D#{i}" });
+                listOfNotes.Add(new Note { NoteName = "E", Octave = i, FullName = $"E{i}" });
+                listOfNotes.Add(new Note { NoteName = "F", Octave = i, FullName = $"F{i}" });
+                listOfNotes.Add(new Note { NoteName = "F#", Octave = i, FullName = $"F#{i}" });
+                listOfNotes.Add(new Note { NoteName = "G", Octave = i, FullName = $"G{i}" });
+                listOfNotes.Add(new Note { NoteName = "G#", Octave = i, FullName = $"G#{i}" });
+                listOfNotes.Add(new Note { NoteName = "A", Octave = i, FullName = $"A{i}" });
+                listOfNotes.Add(new Note { NoteName = "A#", Octave = i, FullName = $"A#{i}" });
+                listOfNotes.Add(new Note { NoteName = "B", Octave = i, FullName = $"B{i}" });
 
             }
                                  

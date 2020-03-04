@@ -189,12 +189,12 @@ namespace WPFUI.ViewModels
             get { return _Notes; }
         }
 
-        public string NoteName {
+        public string FullName {
             get { return _noteName; }
             set
             {
                 _noteName = value;
-                NotifyOfPropertyChange(() => NoteName);
+                NotifyOfPropertyChange(() => FullName);
             }
 
         }

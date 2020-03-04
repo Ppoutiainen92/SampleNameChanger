@@ -67,12 +67,12 @@
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="4">
             <TextBlock Margin="50,0,0,0">Starting Note</TextBlock>
             <ComboBox x:Name="StartingNotes" SelectedItem="{Binding Path=SelectedStartingNote, Mode=OneWayToSource}"
-                      DisplayMemberPath="NoteName">
+                      DisplayMemberPath="FullName">
                 
             </ComboBox>
             <TextBlock Margin="50,0,0,0">Ending Note</TextBlock>
             <ComboBox x:Name="EndingNotes" SelectedItem="{Binding Path=SelectedEndingNote, Mode=OneWayToSource}"
-                      DisplayMemberPath="NoteName">
+                      DisplayMemberPath="FullName">
 
             </ComboBox>
         </StackPanel>

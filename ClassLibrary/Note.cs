@@ -10,10 +10,11 @@ namespace ClassLibrary
     {
         public string NoteName { get; set; }
         public int Octave { get; set; }
+        public string FullName { get; set; }
 
         public Note()
         {
-
+            
 
         }
         public int noteIndex()
