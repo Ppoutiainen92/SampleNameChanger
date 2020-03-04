@@ -57,13 +57,13 @@
 
 
 
-        <!--<ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Margin="100,0,0,0">
+        <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Margin="100,0,0,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>            
                 </ItemsControl.ItemsPanel>
-            </ItemsControl>-->
+            </ItemsControl>
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="4">
             <TextBlock Margin="50,0,0,0">Starting Note</TextBlock>
             <ComboBox x:Name="StartingNotes" SelectedItem="{Binding Path=SelectedStartingNote, Mode=OneWayToSource}"

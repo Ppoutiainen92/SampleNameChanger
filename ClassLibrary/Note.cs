@@ -13,9 +13,13 @@ namespace ClassLibrary
 
         public Note(string NoteName, int Octave)
         {
-            NoteName = noteName;
-            Octave = octave;
+            noteName = NoteName;
+            octave = Octave;
 
+        }
+        public int noteIndex()
+        {
+            return NoteValueFinder.returnNoteListElement(this);
         }
 
 

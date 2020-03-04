@@ -11,6 +11,7 @@ namespace ClassLibrary
         public static List<Note> createListOfNotes()
         {
             List<Note> listOfNotes = new List<Note>();
+            Note note = new Note("C", 1);
 
             for (int i = 0; i < 9; i++)
             {
@@ -29,6 +30,26 @@ namespace ClassLibrary
             }
                                  
             return listOfNotes;
+        }
+
+        public static List<Note> createNotes(Note startingNote, Note endingNote)
+        {
+            List<Note> listOfNotes = NoteGenerator.createListOfNotes();
+
+            List<Note> output = new List<Note>();
+
+            for (int i = startingNote.noteIndex(); i <= endingNote.noteIndex(); i++)
+            {
+                output.Add(listOfNotes[i]);
+
+
+
+
+            }
+
+            return output;
+
+
         }
     }
 }

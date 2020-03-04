@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibrary;
+using System.Diagnostics;
 
 namespace WPFUI.Models
 {
@@ -41,7 +42,13 @@ namespace WPFUI.Models
         public static BindableCollection<Note> Notes()
         {
             BindableCollection<Note> output = new BindableCollection<Note>();
+            List<Note> listOfNotes = NoteGenerator.createListOfNotes();
 
+            foreach(var note in listOfNotes)
+            {
+                output.Add(note);
+
+            }
 
             return output;
         }
