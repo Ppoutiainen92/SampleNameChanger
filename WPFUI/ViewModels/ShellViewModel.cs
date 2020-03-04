@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using WPFUI.Models;
+using ClassLibrary;
 
 namespace WPFUI.ViewModels
 {
@@ -20,18 +21,23 @@ namespace WPFUI.ViewModels
         private bool _checkBoxf;
         private bool _checkBoxff;
         private bool _checkBoxfff;
-        public Dictionary<string ,bool> dynamicsCheckBoxStates;
+        private List<FileInfo> listOfSelectedFiles;
+        private int _roundRobinValue = 0;
+        private BindableCollection<Note> _Notes;
+        
 
+
+        public Dictionary<string ,bool> dynamicsCheckBoxStates;
         public BindableCollection<string> FilePaths { get; set; }
         public BindableCollection<string> CheckBoxStates { get; set; }
-        List<FileInfo> listOfSelectedFiles;
-        int _roundRobinValue = 0;
 
         public ShellViewModel()
         {
             FilePaths = new BindableCollection<string>();
             CheckBoxStates = new BindableCollection<string>();
             dynamicsCheckBoxStates = Initialize.DynamicsCheckBoxDictionary();
+            _Notes = Initialize.Notes();
+
         }
         
         public void SelectFiles()
@@ -172,5 +178,14 @@ namespace WPFUI.ViewModels
 
         }
 
+        public BindableCollection<Note> StartingNotes
+        {
+            get { return _Notes; }
+        }
+
+        public BindableCollection<Note> EndingNotes
+        {
+            get { return _Notes; }
+        }
     }
 }

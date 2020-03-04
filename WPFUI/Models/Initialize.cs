@@ -1,8 +1,10 @@
 ﻿using System;
+using Caliburn.Micro;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary;
 
 namespace WPFUI.Models
 {
@@ -31,6 +33,14 @@ namespace WPFUI.Models
             output.Add("Checkxoxff", false);
             output.Add("Checkxoxfff", false);
 
+
+
+            return output;
+        }
+
+        public static BindableCollection<Note> Notes()
+        {
+            BindableCollection<Note> output = new BindableCollection<Note>();
 
 
             return output;
