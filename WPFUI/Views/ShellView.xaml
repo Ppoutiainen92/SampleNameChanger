@@ -77,7 +77,7 @@
 
 
         <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1">
-            <Button x:Name="Rename Files">Rename</Button>
+            <Button x:Name="Rename_Files">Rename</Button>
         </StackPanel>
 
 

@@ -62,6 +62,11 @@ namespace WPFUI.ViewModels
 
         }
 
+        public void Rename_Files()
+        {
+            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates);
+
+        }
 
         public bool CheckBoxppp
         {

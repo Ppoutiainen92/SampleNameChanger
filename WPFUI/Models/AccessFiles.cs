@@ -49,7 +49,11 @@ namespace WPFUI.Models
             return output;
         }
         
+        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates)
+        {
 
+
+        }
 
 
 
