@@ -65,10 +65,16 @@
                 </ItemsControl.ItemsPanel>
             </ItemsControl>-->
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="4">
-            <ComboBox>
+            <TextBlock Margin="50,0,0,0">Starting Note</TextBlock>
+            <ComboBox x:Name="StartingNotes" SelectedItem="{Binding Path=SelectedStartingNote, Mode=OneWayToSource}"
+                      DisplayMemberPath="NoteValue">
                 
             </ComboBox>
-            
+            <TextBlock Margin="50,0,0,0">Ending Note</TextBlock>
+            <ComboBox x:Name="EndingNotes" SelectedItem="{Binding Path=SelectedEndingNote, Mode=OneWayToSource}"
+                      DisplayMemberPath="NoteValue">
+
+            </ComboBox>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="5" Grid.Column="1" Margin="0,0,0,100">
