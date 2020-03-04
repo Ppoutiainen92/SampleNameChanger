@@ -21,7 +21,7 @@ namespace ClassLibrary
 
 
 
-                if (listOfNotes[i].noteName == searchedNote.noteName && listOfNotes[i].oct == searchedNote.oct)
+                if (listOfNotes[i].noteName == searchedNote.noteName && listOfNotes[i].octave == searchedNote.octave)
                 {
 
                     return i;
