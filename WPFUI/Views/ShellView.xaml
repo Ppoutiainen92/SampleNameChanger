@@ -30,13 +30,18 @@
 
 
         </Grid.ColumnDefinitions>
-
+        <!--Row1-->
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
-            <Button x:Name="SelectFiles">Select Files</Button>
-
-            
+            <Button x:Name="SelectFiles">Select Files</Button>            
         </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="4" Margin="100,0,0,0">
+            <TextBlock>RoundRobins</TextBlock>
+            <TextBox x:Name="RoundRobinValue"></TextBox>
+            <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
+        </StackPanel>
+
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0">
             <TextBlock>Dynamics</TextBlock>
             <CheckBox x:Name="CheckBoxppp" FontSize="10" FontStyle="Italic">ppp</CheckBox>
@@ -50,21 +55,30 @@
             
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="4" Margin="100,0,0,0">
-            <TextBlock>RoundRobins</TextBlock>
-            <TextBox x:Name="RoundRobinValue"></TextBox>
-            <TextBlock Text="{Binding Path=RoundRobinValue, Mode=OneWay}"/>
-        </StackPanel>
 
-        <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Margin="100,0,0,0">
+
+        <!--<ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Margin="100,0,0,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>            
                 </ItemsControl.ItemsPanel>
-            </ItemsControl>
+            </ItemsControl>-->
+        <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="4">
+            <ComboBox>
+                
+            </ComboBox>
+            
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="5" Grid.Column="1" Margin="0,0,0,100">
+            
+        </StackPanel>
 
 
+        <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1">
+            <Button x:Name="Rename Files">Rename</Button>
+        </StackPanel>
 
 
     </Grid>
