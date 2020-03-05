@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using ClassLibrary;
 
 namespace WPFUI.Models
 {
@@ -49,8 +50,13 @@ namespace WPFUI.Models
             return output;
         }
         
-        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates)
+        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote)
         {
+            int fileCount = 0;
+
+            List<Note> notesBetween = NoteGenerator.createNotes(_selectedStartingNote, _selectedEndingNote);
+
+
 
 
         }

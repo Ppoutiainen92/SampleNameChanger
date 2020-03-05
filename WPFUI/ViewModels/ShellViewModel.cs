@@ -83,7 +83,7 @@ namespace WPFUI.ViewModels
 
         public void RenameFiles()
         {
-            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates);
+            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote);
 
         }
 
