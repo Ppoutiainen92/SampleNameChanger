@@ -56,8 +56,16 @@ namespace WPFUI.Models
 
             List<Note> notesBetween = NoteGenerator.createNotes(_selectedStartingNote, _selectedEndingNote);
 
+            List<string> namingOrder = FileNaming.namingOrder(notesBetween, roundRobinValue);
 
+            DirectoryInfo dir = new DirectoryInfo(listOfSelectedFiles[0].DirectoryName);
 
+            foreach (FileInfo file in listOfSelectedFiles)
+            {
+                string newFileName = namingOrder[fileCount] + ".rtf";
+                
+
+            }
 
         }
 
