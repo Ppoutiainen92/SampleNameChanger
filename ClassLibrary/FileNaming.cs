@@ -15,7 +15,7 @@ namespace ClassLibrary
 
             foreach (Note note in notes)
             {
-                for (int i = 0; i < roundRobins; i++)
+                for (int i = -1; i < roundRobins; i++)
                 {
                     output.Add(note.NoteName + Convert.ToString(note.Octave) + " " + (i + 1) + "RR");
 

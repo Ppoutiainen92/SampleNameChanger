@@ -58,13 +58,16 @@ namespace WPFUI.Models
 
             List<string> namingOrder = FileNaming.namingOrder(notesBetween, roundRobinValue);
 
-            DirectoryInfo dir = new DirectoryInfo(listOfSelectedFiles[0].DirectoryName);
+            string folderPath = listOfSelectedFiles[0].DirectoryName;
+            
 
             foreach (FileInfo file in listOfSelectedFiles)
             {
                 string newFileName = namingOrder[fileCount] + ".rtf";
-                
+                string temppath = Path.Combine(folderPath, newFileName);
 
+                file.MoveTo(temppath);
+                fileCount++;
             }
 
         }
