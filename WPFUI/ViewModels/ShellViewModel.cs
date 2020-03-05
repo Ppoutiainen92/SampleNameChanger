@@ -26,7 +26,9 @@ namespace WPFUI.ViewModels
         private int _roundRobinValue = 0;
         private BindableCollection<Note> _Notes;
         private string _noteName;
-        
+        private Note _selectedStartingNote;
+        private Note _selectedEndingNote;
+
 
         public Dictionary<string ,bool> dynamicsCheckBoxStates;
         public BindableCollection<string> FilePaths { get; set; }
@@ -47,7 +49,7 @@ namespace WPFUI.ViewModels
             FilePaths = AccessFiles.AccessListOfFilePaths();
             NotifyOfPropertyChange(() => FilePaths);
             listOfSelectedFiles = AccessFiles.ListOfFileInfo(FilePaths);
-            
+            Trace.Write("");
         }
 
         public int RoundRobinValue
@@ -65,7 +67,11 @@ namespace WPFUI.ViewModels
         {
             get { return _blockText; }
 
-     
+            set
+            {
+                _blockText = value;
+                NotifyOfPropertyChange(() => Block);
+            }
 
         }
 
@@ -198,5 +204,30 @@ namespace WPFUI.ViewModels
             }
 
         }
+
+        
+
+        public Note SelectedStartingNote
+        {
+            get { return _selectedStartingNote; }
+            set
+            {
+                _selectedStartingNote = value;
+
+                NotifyOfPropertyChange(() => SelectedStartingNote);
+            }
+        }
+
+        public Note SelectedEndingNote
+        {
+            get { return _selectedEndingNote; }
+            set {
+                _selectedEndingNote = value;
+                NotifyOfPropertyChange(() => SelectedEndingNote);
+            }
+        }
+
+
+
     }
 }
