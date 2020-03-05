@@ -30,18 +30,21 @@
 
 
         </Grid.ColumnDefinitions>
-        <!--Row1-->
+        
+        <!--SelectFiles-->
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
             <TextBlock Text="{Binding Path=Block, Mode=OneWay}"></TextBlock>
             <Button x:Name="SelectFiles">Select Files</Button>            
         </StackPanel>
-
+        
+        <!--RoundRobins-->
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="4" Margin="10,0,0,0" Grid.RowSpan="2">
             <TextBlock>RoundRobins</TextBlock>
             <TextBox x:Name="RoundRobinValue"></TextBox>
             
         </StackPanel>
 
+        <!--Dynamics Selection-->
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock>Dynamics</TextBlock>
             <CheckBox x:Name="CheckBoxppp" FontSize="10" FontStyle="Italic">ppp</CheckBox>
@@ -56,15 +59,16 @@
         </StackPanel>
 
 
-
+        <!--Debugging-->
         <ItemsControl x:Name="CheckBoxStates" Grid.Column="5" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Margin="100,0,0,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel/>
                     </ItemsPanelTemplate>            
                 </ItemsControl.ItemsPanel>
-            </ItemsControl>
+        </ItemsControl>
         
+        <!--Starting and endingnote selection-->
         <StackPanel Orientation="Vertical" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <TextBlock Margin="50,0,0,0">Starting Note</TextBlock>
             <ComboBox x:Name="StartingNotes" SelectedItem="{Binding Path=SelectedStartingNote, Mode=OneWayToSource}"
@@ -77,14 +81,15 @@
 
             </ComboBox>
         </StackPanel>
-
+        
+        <!--Empty-->
         <StackPanel Orientation="Vertical" Grid.Row="5" Grid.Column="1" Margin="0,0,0,100">
             
         </StackPanel>
 
-
+        <!--RenameButton-->
         <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1">
-            <Button x:Name="Rename_Files">Rename</Button>
+            <Button x:Name="RenameFiles">Rename</Button>
         </StackPanel>
 
 

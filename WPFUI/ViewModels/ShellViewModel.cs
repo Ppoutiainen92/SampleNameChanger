@@ -14,6 +14,7 @@ namespace WPFUI.ViewModels
     public class ShellViewModel : Conductor<object>
     {
         private string _blockText = "jotain";
+
         private bool _checkBoxppp;
         private bool _checkBoxpp;
         private bool _checkBoxp;
@@ -22,10 +23,13 @@ namespace WPFUI.ViewModels
         private bool _checkBoxf;
         private bool _checkBoxff;
         private bool _checkBoxfff;
+
         private List<FileInfo> listOfSelectedFiles;
         private int _roundRobinValue = 0;
+
         private BindableCollection<Note> _Notes;
         private string _noteName;
+
         private Note _selectedStartingNote;
         private Note _selectedEndingNote;
 
@@ -63,6 +67,7 @@ namespace WPFUI.ViewModels
             
         }
 
+        //Debugging
         public string Block
         {
             get { return _blockText; }
@@ -75,12 +80,14 @@ namespace WPFUI.ViewModels
 
         }
 
-        public void Rename_Files()
+
+        public void RenameFiles()
         {
             AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates);
 
         }
 
+        //Dynamics selection
         public bool CheckBoxppp
         {
             get { return _checkBoxppp; }
@@ -179,12 +186,14 @@ namespace WPFUI.ViewModels
             }
         }
 
+        //Change dynamics value at given key
         public void changeDynamicDictValue(string key, bool val)
         {
             dynamicsCheckBoxStates[key] = val;
 
         }
 
+        //Show all notes in the combobox
         public BindableCollection<Note> StartingNotes
         {
             get { return _Notes; }
@@ -206,7 +215,7 @@ namespace WPFUI.ViewModels
         }
 
         
-
+        //Selected note in combobox
         public Note SelectedStartingNote
         {
             get { return _selectedStartingNote; }
