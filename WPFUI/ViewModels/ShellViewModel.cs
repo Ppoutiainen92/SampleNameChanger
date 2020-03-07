@@ -29,6 +29,7 @@ namespace WPFUI.ViewModels
 
         private BindableCollection<Note> _Notes;
         private string _noteName;
+        private string _fileName;   
 
         private Note _selectedStartingNote;
         private Note _selectedEndingNote;
@@ -53,7 +54,8 @@ namespace WPFUI.ViewModels
             FilePaths = AccessFiles.AccessListOfFilePaths();
             NotifyOfPropertyChange(() => FilePaths);
             listOfSelectedFiles = AccessFiles.ListOfFileInfo(FilePaths);
-            Trace.Write("");
+            _fileName = listOfSelectedFiles[0].Name;
+            NotifyOfPropertyChange(() => FileName);
         }
 
         public int RoundRobinValue
@@ -66,6 +68,17 @@ namespace WPFUI.ViewModels
             }
             
         }
+
+
+        public string FileName
+        {
+            get { return _fileName; }
+            set {
+                _fileName = value;
+                NotifyOfPropertyChange(() => FileName);
+            }
+        }
+
 
         //Debugging
         public string Block
@@ -84,7 +97,7 @@ namespace WPFUI.ViewModels
         public void RenameFiles()
         {
             Trace.Write("");
-            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote);
+            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote, _fileName);
 
         }
 

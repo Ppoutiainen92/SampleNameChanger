@@ -50,7 +50,7 @@ namespace WPFUI.Models
             return output;
         }
         
-        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote)
+        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote, string _fileName)
         {
             int fileCount = 0;
 
@@ -63,7 +63,7 @@ namespace WPFUI.Models
 
             foreach (FileInfo file in listOfSelectedFiles)
             {
-                string newFileName = namingOrder[fileCount] + ".rtf";
+                string newFileName = file.Name + " " + namingOrder[fileCount] + ".rtf";
                 string temppath = Path.Combine(folderPath, newFileName);
 
                 file.MoveTo(temppath);
