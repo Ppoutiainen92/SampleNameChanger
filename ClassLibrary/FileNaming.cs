@@ -8,20 +8,26 @@ namespace ClassLibrary
 {
     public class FileNaming
     {
-        public static List<string> namingOrder(List<Note> notes, int roundRobins)
+        public static List<string> namingOrder(List<Note> notes, int roundRobins, Dictionary<string,bool> dynamicsStates)
         {
 
             List<string> output = new List<string>();
-
-            foreach (Note note in notes)
+            foreach (KeyValuePair<string, bool> item in dynamicsStates)
             {
-                for (int i = -1; i < roundRobins; i++)
+                if (item.Value == true)
                 {
-                    output.Add(note.NoteName + Convert.ToString(note.Octave) + " " + (i + 1) + "RR");
+                    foreach (Note note in notes)
+                    {
+                        for (int i = -1; i < roundRobins; i++)
+                        {
+                            output.Add(note.NoteName + Convert.ToString(note.Octave) + " " + (i + 1) + "RR");
+
+                        }
+
+                    }
+
 
                 }
-
-
 
             }
 

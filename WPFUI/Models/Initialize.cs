@@ -25,14 +25,14 @@ namespace WPFUI.Models
         public static Dictionary<string, bool> DynamicsCheckBoxDictionary()
         {
             Dictionary<string, bool> output = new Dictionary<string, bool>();
-            output.Add("Checkxoxppp", false);
-            output.Add("Checkxoxpp", false);
-            output.Add("Checkxoxp", false);
-            output.Add("Checkxoxmp", false);
-            output.Add("Checkxoxmf", false);
-            output.Add("Checkxoxf", false);
-            output.Add("Checkxoxff", false);
-            output.Add("Checkxoxfff", false);
+            output.Add("ppp", false);
+            output.Add("pp", false);
+            output.Add("p", false);
+            output.Add("mp", false);
+            output.Add("mf", false);
+            output.Add("f", false);
+            output.Add("ff", false);
+            output.Add("fff", false);
 
 
 

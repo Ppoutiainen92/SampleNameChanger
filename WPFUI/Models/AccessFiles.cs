@@ -50,7 +50,7 @@ namespace WPFUI.Models
             return output;
         }
         
-        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote, string _fileName, string fileFormat)
+        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote, string _fileName, string fileFormat, Dictionary<string,bool> dynamicsStates)
         {
             int fileCount = 0;
             if (_fileName.Contains("."))
@@ -61,7 +61,7 @@ namespace WPFUI.Models
 
             List<Note> notesBetween = NoteGenerator.createNotes(_selectedStartingNote, _selectedEndingNote);
 
-            List<string> namingOrder = FileNaming.namingOrder(notesBetween, roundRobinValue);
+            List<string> namingOrder = FileNaming.namingOrder(notesBetween, roundRobinValue, dynamicsCheckBoxStates);
 
             string folderPath = listOfSelectedFiles[0].DirectoryName;
             

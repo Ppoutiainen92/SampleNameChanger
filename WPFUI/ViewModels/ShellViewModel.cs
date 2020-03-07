@@ -96,8 +96,8 @@ namespace WPFUI.ViewModels
 
         public void RenameFiles()
         {
-            Trace.Write("");
-            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote, _fileName, fileFormat);
+            
+            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote, _fileName, fileFormat, dynamicsCheckBoxStates);
 
         }
 
@@ -106,7 +106,7 @@ namespace WPFUI.ViewModels
         {
             get { return _checkBoxppp; }
             set {
-                string checkBoxName = "CheckBoxppp";
+                string checkBoxName = "ppp";
                 _checkBoxppp = value;
                 
                 changeDynamicDictValue(checkBoxName, _checkBoxppp);
@@ -118,7 +118,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxpp; }
             set
             {
-                string checkBoxName = "CheckBoxpp";
+                string checkBoxName = "pp";
                 _checkBoxpp = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxpp);
@@ -130,7 +130,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxp; }
             set
             {
-                string checkBoxName = "CheckBoxp";
+                string checkBoxName = "p";
                 _checkBoxp = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxp);
@@ -142,7 +142,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxmp; }
             set
             {
-                string checkBoxName = "CheckBoxmp";
+                string checkBoxName = "mp";
                 _checkBoxmp = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxmp);
@@ -154,7 +154,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxmf; }
             set
             {
-                string checkBoxName = "CheckBoxmf";
+                string checkBoxName = "mf";
                 _checkBoxmf = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxmf);
@@ -166,7 +166,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxf; }
             set
             {
-                string checkBoxName = "CheckBoxf";
+                string checkBoxName = "f";
                 _checkBoxf = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxf);
@@ -178,7 +178,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxff; }
             set
             {
-                string checkBoxName = "CheckBoxff";
+                string checkBoxName = "ff";
                 _checkBoxff = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxff);
@@ -191,7 +191,7 @@ namespace WPFUI.ViewModels
             get { return _checkBoxfff; }
             set
             {
-                string checkBoxName = "CheckBoxfff";
+                string checkBoxName = "fff";
                 _checkBoxfff = value;
 
                 changeDynamicDictValue(checkBoxName, _checkBoxfff);
