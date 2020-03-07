@@ -14,7 +14,7 @@ namespace WPFUI.ViewModels
     public class ShellViewModel : Conductor<object>
     {
         private string _blockText = "jotain";
-
+        private string fileFormat = ".rtf";
         private bool _checkBoxppp;
         private bool _checkBoxpp;
         private bool _checkBoxp;
@@ -51,7 +51,7 @@ namespace WPFUI.ViewModels
         public void SelectFiles()
         {
 
-            FilePaths = AccessFiles.AccessListOfFilePaths();
+            FilePaths = AccessFiles.AccessListOfFilePaths(fileFormat);
             NotifyOfPropertyChange(() => FilePaths);
             listOfSelectedFiles = AccessFiles.ListOfFileInfo(FilePaths);
             _fileName = listOfSelectedFiles[0].Name;
@@ -97,7 +97,7 @@ namespace WPFUI.ViewModels
         public void RenameFiles()
         {
             Trace.Write("");
-            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote, _fileName);
+            AccessFiles.Rename(listOfSelectedFiles, RoundRobinValue, dynamicsCheckBoxStates, _selectedStartingNote, _selectedEndingNote, _fileName, fileFormat);
 
         }
 

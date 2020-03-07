@@ -12,11 +12,11 @@ namespace WPFUI.Models
     public class AccessFiles
     {
         //Opens a dialog and returns list of file's paths.
-        public static BindableCollection<string> AccessListOfFilePaths()
+        public static BindableCollection<string> AccessListOfFilePaths(string fileFormat)
         {
             BindableCollection<string> output = new BindableCollection<string>();
 
-            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog("RTF files(*.rtf)|*.rtf|TXT Files(*.txt)|*.txt");
+            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog($"RTF files(*{fileFormat})|*.rtf|TXT Files(*.txt)|*.txt");
 
             Nullable<bool> result = dlg.ShowDialog();
 
@@ -50,9 +50,14 @@ namespace WPFUI.Models
             return output;
         }
         
-        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote, string _fileName)
+        public static void Rename(List<FileInfo> listOfSelectedFiles, int roundRobinValue, Dictionary<string,bool> dynamicsCheckBoxStates, Note _selectedStartingNote, Note _selectedEndingNote, string _fileName, string fileFormat)
         {
             int fileCount = 0;
+            if (_fileName.Contains("."))
+            {
+                _fileName = FileNaming.removeFormat(_fileName);
+
+            }
 
             List<Note> notesBetween = NoteGenerator.createNotes(_selectedStartingNote, _selectedEndingNote);
 
@@ -63,7 +68,7 @@ namespace WPFUI.Models
 
             foreach (FileInfo file in listOfSelectedFiles)
             {
-                string newFileName = file.Name + " " + namingOrder[fileCount] + ".rtf";
+                string newFileName = _fileName + " " + namingOrder[fileCount] + fileFormat;
                 string temppath = Path.Combine(folderPath, newFileName);
 
                 file.MoveTo(temppath);

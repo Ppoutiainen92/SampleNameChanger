@@ -29,5 +29,13 @@ namespace ClassLibrary
 
             return output;
         }
+
+        public static string removeFormat(string fileName)
+        {
+            int index = fileName.IndexOf(".");
+            string output = fileName.Substring(0, index);
+
+            return output;
+        }
     }
 }
