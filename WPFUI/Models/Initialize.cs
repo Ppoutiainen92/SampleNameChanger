@@ -16,7 +16,7 @@ namespace WPFUI.Models
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.Multiselect = true;
-            dlg.DefaultExt = ".rtf";
+            dlg.DefaultExt = ".wav";
             dlg.Filter = filter;
 
             return dlg;

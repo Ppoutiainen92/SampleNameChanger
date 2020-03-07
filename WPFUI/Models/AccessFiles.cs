@@ -16,7 +16,7 @@ namespace WPFUI.Models
         {
             BindableCollection<string> output = new BindableCollection<string>();
 
-            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog($"RTF files(*{fileFormat})|*.rtf|TXT Files(*.txt)|*.txt");
+            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog($"All files (*.*)|*.*");
 
             Nullable<bool> result = dlg.ShowDialog();
 

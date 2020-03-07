@@ -20,7 +20,7 @@ namespace ClassLibrary
                     {
                         for (int i = -1; i < roundRobins; i++)
                         {
-                            output.Add(note.NoteName + Convert.ToString(note.Octave) + " " + (i + 1) + "RR");
+                            output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave) + " "  + (i + 1) + "RR");
 
                         }
 
