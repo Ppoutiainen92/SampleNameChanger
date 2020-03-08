@@ -13,7 +13,7 @@ namespace WPFUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        private string _blockText = "jotain";
+        private string _blockText = "";
         private string fileFormat = ".wav";
         private bool _checkBoxppp;
         private bool _checkBoxpp;
