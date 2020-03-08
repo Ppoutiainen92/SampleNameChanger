@@ -16,7 +16,7 @@ namespace WPFUI.Models
         {
             BindableCollection<string> output = new BindableCollection<string>();
 
-            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog($"All files (*.*)|*.*");
+            Microsoft.Win32.OpenFileDialog dlg = Initialize.InitializeOpenFileDialog($"Wave files (*.wav)|*.wav");
 
             Nullable<bool> result = dlg.ShowDialog();
 
