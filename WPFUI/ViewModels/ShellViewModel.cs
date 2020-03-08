@@ -29,7 +29,7 @@ namespace WPFUI.ViewModels
 
         private BindableCollection<Note> _Notes;
         private string _noteName;
-        private string _fileName;   
+        private string _fileName;
 
         private Note _selectedStartingNote;
         private Note _selectedEndingNote;
@@ -45,6 +45,7 @@ namespace WPFUI.ViewModels
             CheckBoxStates = new BindableCollection<string>();
             dynamicsCheckBoxStates = Initialize.DynamicsCheckBoxDictionary();
             _Notes = Initialize.Notes();
+
 
         }
         
