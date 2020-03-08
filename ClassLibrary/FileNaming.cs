@@ -12,7 +12,27 @@ namespace ClassLibrary
         {
 
             List<string> output = new List<string>();
-            foreach (KeyValuePair<string, bool> item in dynamicsStates)
+
+            if (roundRobins == 0)
+            {
+                foreach (KeyValuePair<string, bool> item in dynamicsStates)
+                {
+                    if (item.Value == true)
+                    {
+                        foreach (Note note in notes)
+                        {
+                            for (int i = -1; i < roundRobins; i++)
+                            {
+                                output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave));
+
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (KeyValuePair<string, bool> item in dynamicsStates)
             {
                 if (item.Value == true)
                 {
@@ -20,15 +40,12 @@ namespace ClassLibrary
                     {
                         for (int i = -1; i < roundRobins; i++)
                         {
-                            output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave) + " "  + (i + 1) + "RR");
+                            output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave) + " "  + (i + 2) + "RR");
 
                         }
-
                     }
-
-
                 }
-
+            }
             }
 
 
