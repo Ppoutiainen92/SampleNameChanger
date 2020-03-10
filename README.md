@@ -42,11 +42,8 @@ etc...
 
 ## Installing
 
-To install this program, go to
-``
-WPFUI\bin\Release\[Version number]
-``
-and copy all files to your chosen folder.
+To install this program download [version number].zip file and extract it to chosen folder.
+
 
 ## Built With
 Caliburn Micro
