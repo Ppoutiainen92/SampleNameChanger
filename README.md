@@ -42,7 +42,7 @@ etc...
 
 ## Installing
 
-To install this program download [version number].zip file and extract it to chosen folder.
+To install this program download /ReleaseVersions/[version number].zip file and extract it to chosen folder.
 
 
 ## Built With
