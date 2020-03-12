@@ -256,7 +256,10 @@ namespace WPFUI.ViewModels
             }
         }
 
-
+        public void LoadAboutScreen()
+        {
+            
+        }
 
     }
 }
