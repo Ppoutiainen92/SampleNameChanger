@@ -70,6 +70,10 @@ namespace WPFUI.Models
 
             foreach (FileInfo file in listOfSelectedFiles)
             {
+                if (fileCount + 1 > namingOrder.Count)
+                {
+                    break;
+                }
                 string newFileName = _fileName + $"({fileCount}) " + namingOrder[fileCount] + fileFormat;
                 string temppath = Path.Combine(folderPath, newFileName);
 

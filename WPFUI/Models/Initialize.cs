@@ -53,5 +53,16 @@ namespace WPFUI.Models
             return output;
         }
 
+        public static Dictionary<string,bool> RenamingConditions()
+        {
+            var output = new Dictionary<string, bool>();
+            output.Add("StartingNote", false);
+            output.Add("EndingNote", false);
+            output.Add("FilesAdded", false);
+
+
+            return output;
+        }
+
     }
 }

@@ -25,9 +25,16 @@ namespace WPFUI.ViewModels
         private bool _checkBoxf;
         private bool _checkBoxff;
         private bool _checkBoxfff;
+        private bool _canRenameFiles = false;
+        private Dictionary<string, bool> renameConditions;
+        private string filesStateAdded = "FilesAdded";
+        private string startingNoteStateAdded = "StartingNote";
+        private string EndingNoteStateAdded = "EndingNote";
+
 
         private List<FileInfo> listOfSelectedFiles;
         private int _roundRobinValue = 0;
+
 
         private BindableCollection<Note> _Notes;
         private string _noteName;
@@ -49,6 +56,7 @@ namespace WPFUI.ViewModels
             dynamicsCheckBoxStates = Initialize.DynamicsCheckBoxDictionary();
             _Notes = Initialize.Notes();
             manager = new WindowManager();
+            renameConditions = Initialize.RenamingConditions();
 
         }
         
@@ -62,8 +70,8 @@ namespace WPFUI.ViewModels
                 listOfSelectedFiles = AccessFiles.ListOfFileInfo(FilePaths);
                 _fileName = listOfSelectedFiles[0].Name;
 
+                RenamingAllowed(filesStateAdded);
             }
-            
             NotifyOfPropertyChange(() => FileName);
         }
 
@@ -100,6 +108,14 @@ namespace WPFUI.ViewModels
                 NotifyOfPropertyChange(() => Block);
             }
 
+        }
+
+        
+
+        public bool CanRenameFiles
+        {
+            get { return _canRenameFiles; }
+            set { _canRenameFiles = value; }
         }
 
 
@@ -247,6 +263,11 @@ namespace WPFUI.ViewModels
                 _selectedStartingNote = value;
 
                 NotifyOfPropertyChange(() => SelectedStartingNote);
+                if (SelectedStartingNote!= null)
+                {
+                    RenamingAllowed(startingNoteStateAdded);
+
+                }
             }
         }
 
@@ -256,6 +277,11 @@ namespace WPFUI.ViewModels
             set {
                 _selectedEndingNote = value;
                 NotifyOfPropertyChange(() => SelectedEndingNote);
+                if(SelectedEndingNote != null)
+                {
+
+                    RenamingAllowed(EndingNoteStateAdded);
+                }
             }
         }
 
@@ -263,6 +289,27 @@ namespace WPFUI.ViewModels
         {
 
             manager.ShowDialog(new AboutViewModel(), null, null);
+        }
+
+
+        public void RenamingAllowed(string changeState)
+        {
+            
+
+            renameConditions[changeState] = true;
+
+
+            foreach(KeyValuePair<string,bool> item in renameConditions)
+            {
+                if(item.Value == false)
+                {
+                    return;
+                }
+
+            }
+            _canRenameFiles = true;
+            NotifyOfPropertyChange(() => CanRenameFiles);
+
         }
 
     }
