@@ -15,7 +15,22 @@ namespace ClassLibrary
 
             if (roundRobins == 0)
             {
-                foreach (KeyValuePair<string, bool> item in dynamicsStates)
+
+                if (Validator.CheckIfDynamicsAdded(dynamicsStates) == false)
+                {
+                    foreach (Note note in notes)
+                    {
+                        for (int i = -1; i < roundRobins; i++)
+                        {
+                            output.Add(note.NoteName + Convert.ToString(note.Octave));
+
+                        }
+                    }
+                }
+
+                else
+                {
+                    foreach (KeyValuePair<string, bool> item in dynamicsStates)
                 {
                     if (item.Value == true)
                     {
@@ -29,23 +44,42 @@ namespace ClassLibrary
                         }
                     }
                 }
+
+                }
             }
+
             else
             {
-                foreach (KeyValuePair<string, bool> item in dynamicsStates)
-            {
-                if (item.Value == true)
+                if (Validator.CheckIfDynamicsAdded(dynamicsStates) == false)
                 {
                     foreach (Note note in notes)
                     {
                         for (int i = -1; i < roundRobins; i++)
                         {
-                            output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave) + " "  + (i + 2) + "RR");
+                            output.Add(note.NoteName + Convert.ToString(note.Octave) + " " + (i + 2) + "RR");
 
                         }
                     }
                 }
-            }
+
+                else
+                {
+                    foreach (KeyValuePair<string, bool> item in dynamicsStates)
+                {
+                    if (item.Value == true)
+                    {
+                        foreach (Note note in notes)
+                        {
+                            for (int i = -1; i < roundRobins; i++)
+                            {
+                                output.Add(item.Key + " " + note.NoteName + Convert.ToString(note.Octave) + " "  + (i + 2) + "RR");
+
+                            }
+                        }
+                    }
+                }
+
+                }
             }
 
 

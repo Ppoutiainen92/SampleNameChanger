@@ -20,6 +20,8 @@ namespace WPFUI.Models
 
             Nullable<bool> result = dlg.ShowDialog();
 
+
+
             if (result == true)
             {
                 foreach (String file in dlg.FileNames)
@@ -68,7 +70,7 @@ namespace WPFUI.Models
 
             foreach (FileInfo file in listOfSelectedFiles)
             {
-                string newFileName = _fileName + " " + namingOrder[fileCount] + fileFormat;
+                string newFileName = _fileName + $"({fileCount}) " + namingOrder[fileCount] + fileFormat;
                 string temppath = Path.Combine(folderPath, newFileName);
 
                 file.MoveTo(temppath);
