@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.IO;
 using WPFUI.Models;
 using ClassLibrary;
+using System.Windows;
+using System.Dynamic;
 
 namespace WPFUI.ViewModels
 {
@@ -34,6 +36,7 @@ namespace WPFUI.ViewModels
         private Note _selectedStartingNote;
         private Note _selectedEndingNote;
 
+        IWindowManager manager;
 
         public Dictionary<string ,bool> dynamicsCheckBoxStates;
         public BindableCollection<string> FilePaths { get; set; }
@@ -45,7 +48,7 @@ namespace WPFUI.ViewModels
             CheckBoxStates = new BindableCollection<string>();
             dynamicsCheckBoxStates = Initialize.DynamicsCheckBoxDictionary();
             _Notes = Initialize.Notes();
-
+            manager = new WindowManager();
 
         }
         
@@ -256,9 +259,10 @@ namespace WPFUI.ViewModels
             }
         }
 
-        public void LoadAboutScreen()
+        public void LoadPageOne()
         {
-            
+
+            manager.ShowDialog(new AboutViewModel(), null, null);
         }
 
     }

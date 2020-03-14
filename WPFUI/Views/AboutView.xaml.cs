@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPFUI.ViewModels
+namespace WPFUI.Views
 {
     /// <summary>
-    /// Interaction logic for About.xaml
+    /// Interaction logic for AboutView.xaml
     /// </summary>
-    public partial class About : Window
+    public partial class AboutView : Window
     {
-        public About()
+        public AboutView()
         {
             InitializeComponent();
         }
