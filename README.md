@@ -12,11 +12,11 @@ Specify amounts of round robins within your samples. 0 means no round robins wil
 
 With filename you can rename your selected samples to wanted name. However don't add any dynamic markings, round robins or note pitches they are done automatically
 
-Specify your dynamics, starting note and ending note of your samples.
+Specify starting note and ending note of your samples. If dynamic are not defined sample won't be named with dynamic markings.
 
 Example how sample is named.
 
-Sample => Sample pp C0 1RR
+Sample => BaseOfFilename(NumberOfSample) pp C0 1RR
 ## Warning
 Your samples must be in specific order allowing program to work.
 
