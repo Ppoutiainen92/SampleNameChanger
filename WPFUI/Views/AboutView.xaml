@@ -4,9 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI.Views"
-        mc:Ignorable="d"
-        Title="AboutView" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="15" WindowStartupLocation="CenterScreen" FontFamily="Lucida Sans"
+        Title="About" Height="150" Width="250">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+
+
+            <ColumnDefinition Width="10"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock>
+                SampleNameChanger v1.0
+            </TextBlock>
+            <TextBlock>
+                
+            </TextBlock>
+            <TextBlock>
+                Developed by Petri Poutiainen
+            </TextBlock>
+            <TextBlock>
+                © All rights reserved
+            </TextBlock>
+        </StackPanel>
         
     </Grid>
 </Window>
